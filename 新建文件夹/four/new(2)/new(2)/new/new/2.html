@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Document</title>
+	<style>
+		*{margin:0;padding: 0;text-decoration: none;color: #34495e;list-style: none;}
+		#navUl{
+			width: 1200px;
+			height: 60px;
+			border-bottom: 1px solid #ccc;
+		}
+		#navUl li{
+			float: left;
+			width: 100px;
+			height: 60px;
+			line-height: 59px;
+			text-align: center;
+			cursor: pointer;
+		}
+		#navUl li.active{
+			border-bottom: 2px solid #5EA0EB;
+			position: relative;
+		}
+		#navUl li.active a{
+			color: #5EA0EB;
+		}
+		#navUl li.active:before{
+			content: '';
+			width: 0;
+			height: 0;
+			border: 6px solid transparent;
+			border-bottom: 6px solid #5EA0EB;
+			position: absolute;
+			left: 50%;
+			margin-left: -4px;
+			bottom: 0;
+		}
+		#navContainDiv #streetDanceNav span.navContainDiv{
+			display: inline-block;
+			width: 10px;
+			height: 120px;
+			border: 1px solid red;
+			position: absolute;
+		}
+		#navContentVideo .navContentShow{
+			width: 1200px;
+			height: 1000px;
+			margin-top: 10px;
+			display: none;
+		}
+		#navContentVideo .navContentShow:first-child{
+			display: block;
+		}
+		#navContentVideo .navContentShow ul {
+			height: 300px;
+		}
+		#navContentVideo .navContentShow ul li{
+			width: 280px;
+			height: 280px;
+			float: left;
+			margin: 10px;
+			position: relative;
+			background: #F8FBFB;
+			z-index:3;
+		}
+		#navContentVideo .navContentShow ul li a{
+			width: 280px;
+			height: 240px;
+			display: inline-block;
+			background: url(image/1.png) no-repeat;
+			border-radius: 10px;
+			z-index: 4;
+		}
+		#navContentVideo .navContentShow ul li span{
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			position: absolute;
+			right: -20px;
+			bottom: 40px;
+			color: #fff;
+		}
+		#navContentVideo .navContentShow ul li i{
+			font-style: normal;
+			width: 280px;
+			height: 40px;
+			background: #F5F2F2;
+			display: inline-block;
+			border-radius: 5px;
+			color: #000;
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul id="navUl">
+			<li class="active" id="commendNav"><a href="#">推荐</a></li>
+			<li id="jazzNav"><a href="#">爵士</a></li>
+			<li id="hippopNav"><a href="#">hippop</a></li>
+			<li id="poppinNav"><a href="#">poppin</a></li>
+			<li id="breakingNav"><a href="#">breaking</a></li>
+			<li id="folkNav"><a href="#">民族舞</a></li>
+			<li id="tapNav"><a href="#">踢踏舞</a></li>
+			<li id="waltzNav"><a href="#">国标舞</a></li>
+			<li id="classicalNav"><a href="#">古典舞</a></li>
+			<li id="balletNav"><a href="#">芭蕾舞</a></li>
+		</ul>
+		<div id="navContentVideo">
+			<div class="navContentShow" id="commendContent">
+				<ul>
+					<li><a href="#"></a><span>时间1：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="jazzContent">
+				<ul>
+					<li><a href="#"></a><span>时间2：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="hippopContent">
+				<ul>
+					<li><a href="#"></a><span>时间3：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="poppinContent">
+				<ul>
+					<li><a href="#"></a><span>时间4：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="breakingContent">
+				<ul>
+					<li><a href="#"></a><span>时间5：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="folkContent">
+				<ul>
+					<li><a href="#"></a><span>时间6：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="tapContent">
+				<ul>
+					<li><a href="#"></a><span>时间7：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="waltzContent">
+				<ul>
+					<li><a href="#"></a><span>时间8：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="classicalContent">
+				<ul>
+					<li><a href="#"></a><span>时间9：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+			<div class="navContentShow" id="balletContent">
+				<ul>
+					<li><a href="#"></a><span>时间10：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+					<li><a href="#"></a><span>时间：</span><i>简介：啊打开了啊是的囧去玩撒旦来看啊山东啊山东啊撒是的</i></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div>
+		<input type="checkbox" />记住密码
+	</div>
+	<script type="text/javascript">
+		var navLi = document.getElementById("navUl").getElementsByTagName("li");
+		var navContentVideo = document.getElementById("navContentVideo");
+		for (var i = 0; i < navLi.length; i++) {
+			(function(){
+				navLi[i].onclick = function(){
+					var leftName = this.id.split("N")[0];
+					var contentName = leftName+'Content';
+					if (document.getElementById(contentName)==undefined) {
+						newDivContent.id = contentName;
+						newDivContent.className = "navContentShow";
+						// ajax加载数据
+					}
+					var allDivContent = navContentVideo.getElementsByTagName("div");
+					for (var j = 0; j < allDivContent.length; j++) {
+						allDivContent[j].style.display = "none";
+					}
+					for (var j = 0; j < navLi.length; j++) {
+						navLi[j].className = '';
+					}
+					var currentDivContent = document.getElementById(contentName);
+					currentDivContent.style.display = "block";
+					this.className = "active";
+				}
+			})(i);
+		}
+	</script>
+</body>
+</html>

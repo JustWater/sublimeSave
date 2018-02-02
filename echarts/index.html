@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="main" style = "width: 600px;height: 400px;"></div>
+	<script type="text/javascript" src="echarts.js/echarts.js"></script>
+	<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        /*var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };*/
+        /*var option = {
+        	tooltip: {
+        		trigger: 'item',
+        		formatter: "{a} <br/>{b}: {c} ({d}%)"
+        	},
+        	legend: {
+        		orient: 'vertical',
+        		x: 'left',
+        		data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        	},
+        	series: [
+        	{
+        		name:'访问来源',
+        		type:'pie',
+        		radius: ['50%', '70%'],
+        		avoidLabelOverlap: false,
+        		label: {
+        			normal: {
+        				show: false,
+        				position: 'center'
+        			},
+        			emphasis: {
+        				show: true,
+        				textStyle: {
+        					fontSize: '30',
+        					fontWeight: 'bold'
+        				}
+        			}
+        		},
+        		labelLine: {
+        			normal: {
+        				show: false
+        			}
+        		},
+        		data:[
+        		{value:335, name:'直接访问'},
+        		{value:310, name:'邮件营销'},
+        		{value:234, name:'联盟广告'},
+        		{value:135, name:'视频广告'},
+        		{value:1548, name:'搜索引擎'}
+        		]
+        	}
+        	]
+        };*/
+        /*var option = {
+        	legend: {
+        		orient: 'vertical',
+        		x: 'left',
+        		data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        	},
+        	textStyle : {
+        		fontWeight : 'normal',
+        		fontSize : 20
+        	},
+        	borderWidth:2,
+        	borderColor:'#fff',
+        	color:['#F54337', '#3497DA','#FBA400','#3AB34A'],
+        	series: [
+        	{
+        		name:'访问来源',
+        		type:'pie',
+        		borderWidth: 2,
+				borderColor: '#fff',
+        		radius: ['50%', '70%'],
+        		avoidLabelOverlap: false,
+        		data:[
+        		{value:335, name:'直接访问'},
+        		{value:310, name:'邮件营销'},
+        		{value:234, name:'联盟广告'},
+        		{value:135, name:'视频广告'},
+        		]
+        	}
+        	]
+        };*/
+
+/*        var option = {
+        	tooltip:{
+        		enterable:true,
+        		trigger: 'axis',
+        		formatter:"总题量:{c}<br/>正确率:{d}<br/>",
+        	},
+        	legend:{
+        		data:['题量asdasd','正确率',],
+        		top:'bottom',
+        		itemGap:30, // 图例之间间距
+        		itemWidth:37,
+        		itemHeight:15
+        	},
+        	xAxis: {
+        		data: ["单选题","是非题","填空题","解答题","综合题","完形填空","听力题"],
+        		axisTick: {
+                    show: false
+                },
+        		axisLine: {
+                    show: true,
+                    lineStyle: {
+        				color:'#ccc'
+        			}
+                },
+                axisLabel: {        
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        fontSize:'14'
+                    },
+                },
+        	},
+        	yAxis: [{
+        		type: 'value',
+        		min: 0,
+        		max: 100,
+        		interval: 10,
+        		axisTick: {
+                    show: false
+                },
+        		axisLine: {
+                    show: true,
+                    lineStyle: {
+        				color:'#ccc'
+        			}
+                },
+                axisLabel: {        
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        fontSize:'14'
+                    },
+                    formatter: '{value}%'
+                },
+        		splitLine: {
+        			lineStyle: {
+        				type: 'dashed'
+        			}
+        		},
+        	},{
+        		type: 'value',
+        		min: 0,
+        		max: 100,
+        		interval: 10,
+        		axisLabel: {
+        			formatter: '{value}%'
+        		},
+        		splitLine: {
+        			lineStyle: {
+        				type: 'dashed'
+        			}
+        		},
+        	}],
+        	series:[{
+        		name:"题量",
+        		type:'bar',
+        		data:[200,312,431,241,175,275,369],
+        		tooltip:{
+        			trigger:"axis",
+        		},
+        		hoverAnimation:false,
+        		itemStyle: {
+        			normal: {
+        				label: {
+        					show: true,
+        					position: 'top',
+        					textStyle: {
+        						color: ['rgb(196,57,54)','rgb(51,73,86)','rgb(100,163,172)','rgb(212,132,105)','rgb(147,201,178)','rgb(118,161,133)','rgb(202,139,36)']
+        					},
+        					formatter:function(params){
+        						if(params.value==0){
+        							return '';
+        						}else
+        						{
+        							return params.value;
+        						}
+        					},
+        				},
+        				hoverAnimation:false,
+        				color:function(params){
+        					var colorList = ['rgb(196,57,54)','rgb(51,73,86)','rgb(100,163,172)','rgb(212,132,105)','rgb(147,201,178)','rgb(118,161,133)','rgb(202,139,36)'];
+        					return colorList[params.dataIndex];
+        				}
+        			}
+        		},
+        	},{
+        		name:'正确率',
+        		type:'line',
+        		data:[321,432,543,376,286,298,400],
+        		tooltip:{
+        			trigger:"axis",
+        		},
+        		itemStyle: {
+        			normal: {
+        				label: {
+        					show: true,
+        					position: 'top',
+        					textStyle: {
+        						color: '#6ec77a' //文字颜色
+        					},
+        					formatter:function(params){
+        						if(params.value==0){
+        							return '';
+        						}else
+        						{
+        							return Math.floor(params.value/1000*100)+"%"; //折线计算百分比，我这是随意的
+        						}
+        					}
+        				},
+        				color:"#6ec77a",
+        				lineStyle:{
+        					color:"#6ec77a"  //折线颜色
+        				}
+        			}	
+        		},
+        	}]
+        };*/
+        var option = {
+        	tooltip:{
+        		enterable:true,
+        		trigger: 'axis',
+        		formatter:"总题数:{c}<br/>正确率:{c1}<br/>",
+        	},
+        	legend:{
+        		data:['个人正确率','班级正确率',],
+        		top:'bottom',
+        		itemGap:30, // 图例之间间距
+        		itemWidth:37,
+        		itemHeight:15
+        	},
+        	xAxis: {
+        		data: ["单选题","是非题","填空题","解答题","综合题","完形填空","听力题"],
+        		axisTick: {
+                    show: false
+                },
+        		axisLine: {
+                    show: true,
+                    lineStyle: {
+        				color:'#ccc'
+        			}
+                },
+                axisLabel: {        
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        fontSize:'14'
+                    },
+                },
+        	},
+        	yAxis: [{
+        		type: 'value',
+        		min: 0,
+        		max: 100,
+        		interval: 10,
+        		axisTick: {
+                    show: false
+                },
+        		axisLine: {
+                    show: true,
+                    lineStyle: {
+        				color:'#ccc'
+        			}
+                },
+                axisLabel: {        
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        fontSize:'14'
+                    },
+                    formatter: '{value}%'
+                },
+        		splitLine: {
+        			lineStyle: {
+        				type: 'dashed'
+        			}
+        		},
+        	}],
+        	series:[{
+        		name:"个人正确率",
+        		type:'bar',
+        		barWidth:40,
+        		barGap:73,
+        		data:[70,40,55,52,42,31,22],
+        		tooltip:{
+        			trigger:"axis",
+        		},
+        		itemStyle: {
+        			normal: {
+        				label: {
+        					show: true,
+        					position: 'top',
+        					textStyle: {
+        						color: ['#c43936','#334956','#64a3a6','#d48469','#93c9b2','#76a185','#ca8827']
+        					},
+        					formatter:function(params){
+        						if(params.value==0){
+        							return '';
+        						}else
+        						{
+        							return params.value+'%';
+        						}
+        					},
+        				},
+        				hoverAnimation:false,
+        				color:function(params){
+        					var colorList = ['#c43936','#334956','#64a3a6','#d48469','#93c9b2','#76a185','#ca8827'];
+        					return colorList[params.dataIndex];
+        				}
+        			}
+        		},
+        	},{
+        		name:'班级正确率',
+        		type:'line',
+        		data:[88,55,73,63,73,64,89],
+        		tooltip:{
+        			trigger:"axis",
+        		},
+        		itemStyle: {
+        			normal: {
+        				label: {
+        					show: true,
+        					position: 'top',
+        					textStyle: {
+        						color: '#6ec77a' //文字颜色
+        					},
+        					formatter:function(params){
+        						if(params.value==0){
+        							return '';
+        						}else
+        						{
+        							return params.value+"%"; //折线计算百分比，我这是随意的
+        						}
+        					}
+        				},
+        				color:"#6ec77a",
+        				lineStyle:{
+        					color:"#6ec77a"  //折线颜色
+        				}
+        			}	
+        		},
+        	}]
+        };
+		/*var option = {
+        	tooltip:{
+        		enterable:true,
+        		trigger: 'axis',
+        		formatter:"个人：{c}%<br/>班级：{c1}%<br/>",
+        		axisPointer: { type: 'none' },
+        		extraCssText:'width:80px;height:36px;line-height:18px;text-align:center;font-size:12px;',
+
+        	},
+        	grid:{
+        		top:'10px',
+        	},
+        	legend:{
+        		data:['个人正确率','班级正确率',],
+        		top:'bottom',
+        		itemGap:30, // 图例之间间距
+        		itemWidth:37,
+        		itemHeight:15
+        	},
+        	xAxis: {
+        		data: ["正确率","半对半错率","错误率"],
+        		axisTick: {
+                    show: false
+                },
+                nameGap:15,
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+        				color:'#ccc'
+        			}
+                },
+                axisLabel: {        
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        fontSize:'16'
+                    },
+                },
+        	},
+        	yAxis: [{
+        		type: 'value',
+        		min: 0,
+        		max: 100,
+        		interval: 10,
+        		axisLabel: {
+        			formatter: '{value}%',
+        			textStyle:{
+        			    color:'#000'
+        			}
+        		},
+        		splitLine: {
+        			lineStyle: {
+        				type: 'dashed'
+        			}
+        		},
+        		axisTick: {
+                    show: false
+                },
+                axisLine: {
+                    show: true,
+                    lineStyle:{
+                        color:'#ccc',
+                        
+                    }
+                },
+        	}],
+        	series:[{
+        		name:"个人正确率",
+        		type:'bar',
+        		data:[70,50,68],
+        		barWidth : 40,
+        		barGap:'65%',
+        		itemStyle: {
+        			normal: {
+        				label: {
+        					show: true,
+        					position: 'top',
+        					textStyle: {
+        						color: ['#74af31','#fca605','#f44739']
+        					},
+        					formatter:function(params){
+        						if(params.value==0){
+        							return '';
+        						}else
+        						{
+        							return params.value+"%";
+        						}
+        					},
+        				},
+        				hoverAnimation:false,
+        				color:function(params){
+        					var colorList = ['#74af31','#fca605','#f44739'];
+        					return colorList[params.dataIndex];
+        				}
+        			}
+        		},
+        	},{
+        		name:'班级正确率',
+        		type:'bar',
+        		data:[89,59,88],
+        		barWidth : 40,
+        		barGap:'65%',
+        		itemStyle: {
+        			normal: {
+        				label: {
+        					show: true,
+        					position: 'top',
+        					textStyle: {
+        						color: ['#cbe1b2','#fedfa6','#f9a49d'] //文字颜色
+        					},
+        					formatter:function(params){
+        						if(params.value==0){
+        							return '';
+        						}else
+        						{
+        							return params.value+"%"; //折线计算百分比，我这是随意的
+        						}
+        					}
+        				},
+        				color:function(params){
+        					var colorList = ['#cbe1b2','#fedfa6','#f9a49d'];
+        					return colorList[params.dataIndex];
+        				}
+        			}	
+        		},
+        	}]
+        };*/
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        /*//从JSON文件中获取数据
+			var myChart = echarts.init(document.getElementById('..'));
+			myChart.setOption({
+				title:{text:'异步JSON数据加载实例'},
+				tooltip:{},
+				legend:{data:[]},
+				xAxis:{data:[]},
+				yAxis:{},
+				series:[{name:"销量",type:"bar",data:[]}]
+			});
+			$.get('../json/data.json').done{function(data){
+				var obj = $.parseJSON(data);
+				myChart.setOption({
+					xAxis:{data:obj.categories},
+					series:[{name:"销量",data:obj.data}]
+				})
+			}}
+			*/
+        /*//从后台
+			var myChart11 = echarts.init(document.getElementById('SS'));
+			myChart11.setOption({
+				title:{text:'异步ajax数据加载实例'},
+				tooltip:{},
+				legend:{data:["销量"]},
+				xAxis:{data:[]},
+				yAxis:{},
+				series:[{name:"销量",type:"bar",data:[]}]
+			});
+			$.ajax({
+				url:"../rest/user/chart",
+				async:false,
+				cache:false,
+				success:function(data){
+					myChart11.setOption({
+						xAxis:{data:data.categories},
+						series:[{name:"销量",data:data.data}]
+					});
+				}
+			})
+			*/
+		</script>
+	</body>
+	</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container js_container">
+		<div class="weui-cells__title">问题描述</div>
+		<div class="weui-cells weui-cells_form">
+			<div class="weui-cell">
+				<div class="weui-cell__bd">
+					<textarea id="doctorIntroduction" class="weui-textarea" placeholder="写答案" rows="3"></textarea>
+					<div class="weui-textarea-counter"><span class="textareaLength">0</span>/200</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).on('input propertychange', '#doctorIntroduction',function(e){
+		e.stopPropagation();
+		var fizeNum = $(this).val().length;
+		if(fizeNum > 200){
+			var char = $(this).val();
+			char = char.substr(0,200);
+			$(this).val(char);
+			fizeNum = 200;
+			weui.topTips('输入不能超过200哦！');
+		}
+		$(this).parent().find('.textareaLength').text(fizeNum);
+	})
+</script>
+</body>
+</html>

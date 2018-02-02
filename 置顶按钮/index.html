@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	.toTop{
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+		border-radius: 50%;
+		position: fixed;
+		right: 20px;
+		bottom: 20px;
+		background: url(toTop.png) no-repeat 16px 0px;
+		background-color: #B8B3B3;
+		transition: background 0.2s;
+		-moz-transition:background 0.2s;
+		-webkit-transition:background 0.2s;
+		-o-transition:background 0.2s;
+	}
+	.toTop:hover{
+		background-color: #2E88CE;
+		background-position-x:-48px;
+	}
+
+</style>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div id="toTop" class="toTop"></div>
+	<script type="text/javascript">
+		var toTop = $("#toTop");
+		toTop.on('click',function(){
+			$("html,body").animate({"scrollTop":0},"fast");
+		})
+		showHideToTop();
+		$(window).scroll(function(){
+			showHideToTop();
+		})
+		function showHideToTop(){
+			if ($(window).scrollTop()>100) {
+				toTop.show();
+			}else{
+				toTop.hide();
+			}
+		}
+	</script>
+	<!-- <script type="text/javascript">
+		var toTop = document.getElementById("toTop");
+		var timer = null;
+		/*toTop.onclick=function(){
+			clearInterval(timer);
+			timer = setInterval(() => {
+			  // Todo...
+			  var scrollTopVal = document.body.scrollTop || document.documentElement.scrollTop;
+			  if (scrollTopVal>0) {
+			  	document.body.scrollTop = document.documentElement.scrollTop = scrollTopVal - 50;
+	
+			  }else{
+			  	clearInterval(timer);
+	
+			  }
+			}, 10);
+		}*/
+		/*toTop.onclick = function(){
+			clearTimeout(timer);
+			timer = setTimeout(function fn() {
+			  // Todo...
+			  var scrollTopVal = document.body.scrollTop || document.documentElement.scrollTop;
+			  if (scrollTopVal>0) {
+			  	document.body.scrollTop = document.documentElement.scrollTop = scrollTopVal - 50;
+			  	timer = setTimeout(fn,10);
+			  }else{
+			  	clearInterval(timer);
+			  }
+			}, 10)
+		}*/
+		/*toTop.onclick = function(){
+			cancelAnimationFrame(timer);
+			timer = requestAnimationFrame(function fn(){
+				var scrollTopVal = document.body.scrollTop || document.documentElement.scrollTop;
+				if (scrollTopVal > 0) {
+					document.body.scrollTop = document.documentElement.scrollTop = scrollTopVal - 50;
+					timer = requestAnimationFrame(fn);
+				}else{
+					cancelAnimationFrame(timer);
+				}
+			})
+		}*/
+		showHideToTop();
+		function showHideToTop(){
+			var scrollTopVal = document.body.scrollTop || document.documentElement.scrollTop;
+			if (scrollTopVal>100) {
+				toTop.style.display="block";
+			}else{
+				toTop.style.display = "none";
+			}
+		}
+		document.onscroll = function(){
+			showHideToTop();
+		}
+	</script> -->
+</body>
+</html>

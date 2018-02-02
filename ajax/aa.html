@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<table id="myTable" cellpadding="1" cellspacing="0" border="1">
+		<caption align="top">流程管理</caption>
+		<thead>
+			<tr>
+				<th>流程ID</th>
+				<th>流程名称</th>
+				<th>流程版本</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<script type="text/javascript" src="../es6/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			url:"ak.json",
+			type:"post",
+			dataType: "json",
+			success:function(data){
+				var obj = eval(data);
+				var tbody = $('<tbody></tbody>');
+				$(obj).each(function(index){
+					var val = obj[index];
+					var tr = $("<tr></tr>");
+					tr.append('<td>'+val.id+'</td>'+'<td>'+val.name+'</td>'+'<td>'+val.version+'</td>');
+					tbody.append(tr);
+				});
+				$("#myTable tbody").replaceWith(tbody);
+			}
+		})
+/*		var obj = eval(data);
+
+		var tbody = $('<tbody></tbody>');
+		$(obj).each(function(index){
+			var val = obj[index];
+			console.log(val);
+			var tr = $("<tr></tr>");
+			tr.append('<td>'+val.id+'</td>'+'<td>'+val.name+'</td>'+'<td>'+val.version+'</td>');
+			tbody.append(tr);
+		});
+		$("#myTable tbody").replaceWith(tbody);*/
+/*		$(function(){
+			$.ajax({
+				url:"/jbpm2web/jbpm/show?username=<%=session.getAttribute("username") %>",
+				type:"get",
+				success: function(data){
+					var obj=eval(data);
+					var tbody=$('<tbody></tbody>');
+					$(obj).each(function (index){
+						var val=obj[index];
+						var tr=$('<tr></tr>');
+						tr.append('<td>'+ val.id + '</td>' + '<td>'+ val.name + '</td>' +'<td>'+ val.version + '</td>' + '<td><a href="/jbpm2web/jbpm/delete?id='+val.deploymentId+'" >删除流程</a>|<a href="/jbpm2web/jbpm/start?id='+val.id+'&username=<%=session.getAttribute("username") %>">发起流程</a></td>');
+						tbody.append(tr);
+					});
+					$('#myTable tbody').replaceWith(tbody);
+				}
+			});
+		});*/
+
+		
+/*			var data = [
+					{"id":"8001","name":"one","jiaonum":11,"weijiaonum":12,"cishu":1},
+					{"id":"8001","name":"one","jiaonum":11,"weijiaonum":12,"cishu":1},
+					{"id":"8001","name":"one","jiaonum":11,"weijiaonum":12,"cishu":1},
+					{"id":"8001","name":"one","jiaonum":11,"weijiaonum":12,"cishu":1},
+					{"id":"8001","name":"one","jiaonum":11,"weijiaonum":12,"cishu":1},
+					{"id":"8001","name":"one","jiaonum":11,"weijiaonum":12,"cishu":1},
+					{"id":"8001","name":"one","jiaonum":11,"weijiaonum":12,"cishu":1},
+				   ];
+			
+			var obj = eval(data);
+			var tbody = $("<tbody></tbody>");
+			$(obj).each(function(index){
+				var tr = $("<tr></tr>");
+				var val = obj[index];
+				tr.append("<td>"+val.id+"</td>"+"<td>"+val.name+"</td>"+"<td>"+val.jiaonum+"</td>"+"<td>"+val.weijiaonum+"</td>"+"<td>"+val.cishu+"</td>");
+				tbody.append(tr);
+			})
+			$(".content .totalContent .contentShow tbody").replaceWith(tbody);
+		
+			
+
+*/
+	</script>
+</body>
+</html>

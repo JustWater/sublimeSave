@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{
+		background: #59488b
+	}
+	.timer{
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		/*background: #fff;*/
+		box-shadow: 0px 0px 0px 2px #fff;
+		position: relative;
+	}
+	.timer:after, .timer:before{
+		position: absolute;
+		content:"";
+		background-color: #fff;
+	}
+	.timer:before{
+		width: 8px;
+		height: 2px;
+		top: 11px;
+		left: 11px;
+		-webkit-transform-origin: 1px 1px;
+		-moz-transform-origin: 1px 1px;
+		transform-origin: 1px 1px;
+		-webkit-animation: hrhand 8s linear infinite;
+		-moz-animation: hrhand 8s linear infinite;
+		animation: hrhand 8s linear infinite;
+	}
+	.timer:after{
+		width: 10px;
+		height: 2px;
+		top: 11px;
+		left: 11px;
+		-webkit-transform-origin: 1px 1px;
+		-moz-transform-origin: 1px 1px;
+		transform-origin: 1px 1px;
+		-webkit-animation: minhand 2s linear infinite;
+		-moz-animation: minhand 2s linear infinite;
+		animation: minhand 2s linear infinite;
+	}
+	@keyframes hrhand{
+		0%{transform:rotate(0deg)}
+		100%{transform:rotate(360deg)}
+	}
+	@keyframes minhand{
+		0%{transform:rotate(0deg)}
+		100%{transform:rotate(360deg)}
+	}
+
+
+	.typing_loader{
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		animation: typing 1s linear infinite alternate;
+		margin: 46px auto; /* Not necessary- its only for layouting*/  
+		position: relative;
+		left: -12px;
+	}
+	@keyframes typing{
+		0%{
+			background-color: rgba(255,255,255, 1);
+			box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2), 
+			24px 0px 0px 0px rgba(255,255,255,0.2),
+			36px 0px 0px 0px rgba(255,255,255,0.2);
+
+		}
+		25%{ 
+			background-color: rgba(255,255,255, 0.4);
+			box-shadow: 12px 0px 0px 0px rgba(255,255,255,2), 
+			24px 0px 0px 0px rgba(255,255,255,0.2);
+		}
+		75%{ background-color: rgba(255,255,255, 0.4);
+			box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2), 
+			24px 0px 0px 0px rgba(255,255,255,1);
+		}
+	}
+	.helpa{
+		width: 30px;
+		height: 30px;
+		border:1px solid #fff;
+		border-radius: 50%;
+		text-align: center;
+		animation: rotation 1s ease-in-out infinite;
+	}
+	.helpa:after{
+		content: "";
+		width: 5px;
+		height: 5px;
+		background: #fff;
+		border-radius: 50%;
+		position: absolute;
+	}
+	.help{
+		width: 30px;
+		height: 30px;
+		border: 1px #fff solid;
+		border-radius: 50%;
+		/*-webkit-animation: rotation 1s ease-in-out infinite;*/
+		-moz-animation: rotation 1s ease-in-out infinite;
+		/*animation: rotation 1s ease-in-out infinite;*/
+		margin: 30px auto;
+		text-align: center;
+	}
+	.help:after{
+		width: 5px;
+		height: 5px;
+		background-color: #fff;
+		border-radius: 100%;
+		position: absolute;
+		content: "";
+	}
+	@-webkit-keyframes rotation{
+		0%{-webkit-transform: rotate(0deg);}
+		100%{-webkit-transform: rotate(360deg);}
+	}
+	@-moz-keyframes rotation{
+		0%{-moz-transform: rotate(0deg);}
+		100%{-moz-transform: rotate(360deg);}
+	}
+	@keyframes rotation{
+		0%{transform: rotate(0deg);}
+		100%{transform: rotate(360deg);}
+	}
+	.circle{
+		width: 10px;
+		height: 10px;
+		background: rgba(255,255,255,0.5);
+		box-shadow: 20px 0px 0px 0px rgba(255,255,255,1);
+		margin: 30px auto;
+		border-radius: 50%;
+		animation: anim 1s ease-in-out infinite alternate;
+	}
+	@keyframes anim{
+		0% {opacity: 0.1; transform: rotate(0deg) scale(0.5);}
+		100% {opacity: 1;transform: rotate(360deg) scale(1.2);}
+	}
+</style>
+</head>
+<body>
+	<div class="timer">
+		
+	</div>
+	<div class="typing_loader"></div>
+	<div class="helpa"></div>
+	<div class="circle"></div>
+</body>
+</html>

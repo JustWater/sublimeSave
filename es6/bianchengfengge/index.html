@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		'use strict';
+		if (true) {
+			let x = 'hello';
+		}
+		for (let i = 0; i < 10; i++) {
+			console.log(i);
+		}
+
+		//const
+		//bad
+		var  a = 1 ,b =2,c =3;
+		//good
+		const a1= 1;
+		const b1 =2;
+		const c1 = 3;
+		//best
+		const [a2,b2,c2]=[1,2,3];
+
+		//bad 
+		const a3 ="football";
+		const b3 = 'foo'+a+'bar';
+
+		//acceptable
+		const a4 = 'football';
+		//good
+		const a5 = 'foobar';
+		const b5 = `foo${a}bar`;
+		const c5 = 'foobar';
+
+		function processInput(input){
+			return {left,right,top,bottom};
+		}
+		const {left,right} = processInput(input);
+
+		//
+		const a = {k1:v1,k2:v2};
+		const b = {
+			k1:v1,
+			k2:v2,
+		};
+
+		const aa = {};
+		Object.assign(a,{x:3});
+
+		const aa1 = {x:null};
+		aa1.x=4
+
+		//
+		const bb = {
+			id:5,
+			name:"san ",
+			[getKey('enabled')]:true;
+		}
+		//
+		const atom = {
+			ref,
+			value:1,
+			addValue(value){
+				return atom.value+value;
+			},
+		};
+		//
+		const itemsCopy = [...items];
+		//
+		const foo = document.querySelectorAll(".foo");
+		const nodes = Array.from(foo);
+		//
+		(()=>{
+			console.log("welcome");
+		})();
+
+		
+	</script>
+</body>
+</html>

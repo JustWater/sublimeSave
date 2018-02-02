@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Redux basic</title>
+	<script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+</head>
+<body>
+	<!-- <div>
+		<p>
+			<span id="colorEl">Watch my color.</span>
+			<button id="red">RED</button>
+			<button id="green">GREEN</button>
+			<button id="toggle">TOGGLE</button>
+		</p>
+	</div>
+	<script type="text/javascript">
+		var colorEl = document.getElementById("colorEl");
+		var red = document.getElementById("red");
+		var green = document.getElementById("green");
+		var toggle = document.getElementById("toggle");
+	
+		var store = Redux.createStore(color);
+	
+		function color(state ={color:"red"},action){
+			switch(action.type){
+				case "RED":
+					return {color:"red"}
+				case "GREEN":
+					return {color:"green"}
+				case "TOGGLE":
+					return state.color == "red" ? {color:"green"} :{color: "red"};
+				default:
+					return state
+			}
+		}
+	
+		red.onclick = function(){
+			store.dispatch({
+				type:"RED"
+			})
+		}
+		green.onclick = function(){
+			store.dispatch({
+				type:"GREEN"
+			})
+		}
+		toggle.onclick = function(){
+			store.dispatch({
+				type:"TOGGLE"
+			})
+		}
+		function renderValue() {
+			colorEl.style.color = store.getState().color
+		}
+		renderValue();
+		store.subscribe(renderValue)
+	</script> -->
+	<div>
+		<span>用户名:</span>
+		<input type="text" id="user" />
+	</div>
+	<div>
+		<span>密码：</span>
+		<input type="password" name="" id="pwd" />
+	</div>
+	<div>
+		<button id="btn">登陆</button>
+	</div>
+	<script type="text/javascript">
+		var user = document.getElementById("user"),
+			pwd = document.getElementById("pwd"),
+			btn = document.getElementById("btn");
+		btn.onclick = function(){
+			var v1 = user.value;
+			var v2 = pwd.value;
+			if (v1 == "123" && v2 == "111") {
+				store.dispatch({
+					type: "User",
+					payload:v1
+				})
+			}
+		}
+
+		var store = Redux.createStore(User);
+
+		function User(state,action){
+			switch(action.type){
+				case "User":
+					return {User:user.value,Pwd:pwd.value};
+				default:
+					return state
+			}
+		}
+
+
+		function renderValue(){
+			console.log(store.getState())
+		}
+			
+		renderValue();
+		store.subscribe(renderValue)
+	</script>
+</body>
+</html>

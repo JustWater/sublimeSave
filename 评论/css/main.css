@@ -1,0 +1,195 @@
+*{margin: 0;padding: 0}
+textarea{resize:none;outline: none;}
+a{text-decoration: none;color: #000;}
+.commentDiv{
+	width: 600px;
+	padding: 20px;
+	border: 1px solid #ededed;
+	margin: 20px auto;
+	overflow: hidden;
+}
+.commentArea{
+	width: 100%;
+	height: 184px;
+	padding-bottom: 20px;
+}
+.userSelf{
+	position: relative;
+	width: 90px;
+}
+.userSelf .userName{
+	position: absolute;
+	left: 0px;
+	top: 70px;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+}
+.userSelf .self{
+	color: #999;
+}
+.commentInput{
+	width: 510px;
+	height: 100px;
+	font-size: 16px;
+	padding: 15px;
+	margin-left: 12px;
+	border: 1px solid #c6c8ce;
+	border-radius: 3px;
+	font-family: "微软雅黑";
+	box-sizing: border-box;
+	box-shadow: inset 0 0 8px rgba(182,195,214,0.6);
+	display: inline-block;
+}
+.commentInputFocus {
+	border: 1px solid #C4A4D6;
+	box-shadow: inset 0 0 8px rgba(0,136,170,0.5)
+}
+.wordNum,.cBtn{
+	display: inline-block;
+	float: right;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+}
+.numChange{
+	font-style: normal;
+}
+.cBtn{
+	background: #A7A3CD;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 14px;
+	color: #fff;
+}
+.userImg{
+	width: 48px;
+	height: 48px;
+	display: inline-block;
+	padding: 15px;
+	float: left;
+}
+.userBlock{
+	height: 30px;
+}
+.commentPer{
+	border-top: 1px solid #ededed;
+	overflow: hidden;
+}
+
+.commentPer .userMes{
+	float: left;
+	padding: 20px;
+	width: 480px;
+}
+.commentPer .userMes .userAbout{
+	font-size: 14px;
+}
+.userName{
+	color: #A7A3CD;
+}
+.commentPer .userMes .userAbout i{
+	font-style: normal;
+	color: #898787
+}
+.commentPer .userMes .operateDiv {
+	margin-top: 8px;
+	font-size: 14px;
+	width: 100%;
+}
+.commentPer .userMes .operateDiv .writeTime{
+	color: #898787;
+	display: inline-block;
+	float: left;
+}
+.commentPer .userMes .operateDiv .operate{
+	float: right;
+	position: relative;
+	width: 123px;
+}
+.operate .del{
+	margin-right: 20px;
+	display: none;
+	position: absolute;
+	left: -80px;
+}
+.operate .userDel{
+	margin-right: 75px;
+}
+.operate .reply{
+	margin-right: 20px;
+}
+.operate .del,.operate .reply,.operate .praise{
+	color: #898787;
+}
+.operate .del{
+	background: url(../jQueryWbPl3013201705260102/jQueryWbPl/images/del.png) no-repeat 0 2px;
+	padding-left: 20px;
+}
+.operate .praise{
+	background: url(../jQueryWbPl3013201705260102/jQueryWbPl/images/icon-all_01.png) no-repeat 0px -198px;
+	padding-left: 40px;	 
+	width: 70px;
+	display: inline-block;
+	box-sizing: border-box;
+	position: absolute;
+	right: 0;
+}
+.operate .praiseCheck{
+	color: #E5B7B7;
+	background-position: 0px -119px;
+}
+.childComment{
+	float: right;
+	width: 400px;
+	margin-top: 25px;
+}
+.childText{
+	float: right;
+	width: 470px;
+}
+.replyList{
+	width: 485px;
+	margin-top: 40px;
+	margin-left: 10px;
+	overflow: hidden;
+	font-size: 14px;
+}
+.replyDiv{
+	margin-right: 15px;
+	overflow: hidden;
+}
+.replyDiv .myReply{
+	width: 100%;
+	height: 20px;
+	padding: 10px 15px;
+}
+.replyTime{
+	padding-left: 15px;
+	color: #898787;
+}
+/*.replyDiv .myReply span,.replyDiv .replyOther span{
+	color: #898787;
+}*/
+.replyDiv .myReply .my,.replyDiv .myReply .other{
+	color: #A7A3CD;
+}
+.replyOne{
+	background: #FBF6F6;
+	height: 70px;
+	border-bottom: 1px solid #ccc;
+}
+/*.replyDiv .replyOther span{
+	float: left;
+	padding-left: 15px;
+}*/
+.replyDiv .replyOther .operate{
+	float: right;
+	position: relative;
+	width: 123px;
+}
+.commentInput:focus{
+	border: 1px solid #C4A4D6;
+	box-shadow: inset 0 0 8px rgba(0,136,170,0.5)
+}

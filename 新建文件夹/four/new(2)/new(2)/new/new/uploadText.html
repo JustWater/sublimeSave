@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0}
+		#imgChoose{
+			width: 400px;
+			height: 400px;
+			overflow: hidden;
+			border: 1px solid red;
+			position: relative;
+			margin-left: 500px;
+		}
+		#img{
+			display: block;
+		}
+		#thumbBox{
+			width: 100px;
+			height: 100px;
+			border: 1px solid blue;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -50px;
+			margin-top: -50px;
+		}
+		#img1{
+			width: 60px;
+			height: 60px;
+			border-radius: 60px;
+			background: #EBE8E8;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<form name='test'>
+		<input type="file" name='file'>
+		<input type="submit" value="提交">
+	</form>
+	<div id="imgChoose">
+		<img src="" alt="" id="img">
+		<div id="thumbBox"></div>
+	</div>
+	<div id="box">
+		<img src="" id="img1">
+	</div>
+	<script>
+		var img = document.getElementById('img'),
+			img1 = document.getElementById("img1"),
+        	preview;
+        var self={};
+		document.test.file.addEventListener('change', function() {
+			var fr = new FileReader();
+			fr.onload = function() {
+				preview = this.result;
+        		img.src = preview;
+        		img1.src = preview;
+			};
+			fr.readAsDataURL(this.files[0]);
+		})
+  		document.test.addEventListener('submit', function(e) {
+  			e.preventDefault();
+  			var binaryString = atob(preview.split(',')[1]),
+  			mimeType = preview.split(',')[0].match(/:(.*?);/)[1],
+  			length = binaryString.length,
+  			u8arr = new Uint8Array(length),
+  			blob,
+  			fd = new FormData(),
+  			xhr = new XMLHttpRequest();
+  			console.log(fd)
+			/*while(length--) {
+				u8arr[length] = binaryString.charCodeAt(length);
+			}*/
+			// blob = new Blob([u8arr.buffer], {type: mimeType});
+			// fd.append('file', blob);
+			/*xhr.open('post', '/upload');
+			xhr.send(fd);*/
+		})
+		var thumbBox = document.getElementById("thumbBox");
+		thumbBox.onmousedown = function(e){
+			var e=e||event;
+			self.x=e.clientX-this.offsetLeft;
+			self.y=e.clientY+document.documentElement.scrollTop-this.offsetTop;
+			thumbBox.onmousemove = function(e){
+				var e=e||event;
+				var t=e.clientY+document.documentElement.scrollTop-self.y;
+				var l=e.clientX-self.x;
+				thumbBox.style.left =l+'px';
+				thumbBox.style.top  =t+'px';
+			}
+		}
+		</script>
+	</body>
+	</html>

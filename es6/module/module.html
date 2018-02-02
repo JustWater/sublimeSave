@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="module">
+		export var firstName = 'Michael';
+		export var lastName = 'Jackson';
+		export var year =1958;
+		var m = 1;
+		var n = 2;
+		export{m as m1,n as n1,m as m2};
+		console.log(m);
+		console.log(n);
+		console.log(firstName);
+
+		export var foo = 'bar';
+		console.log(foo);
+		setTimeout(() => {foo = 'baz';console.log(foo);},500);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .mask{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        background: rgba(186,186,186,0.5);
+    }
+    .mask .maskContent {
+        position: fixed;
+        width: 174px;
+        border-radius: 5px;
+        background-color: #fff;
+        left: 50%;
+        margin-left: -97px;
+        top: 40%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        text-align: center;
+        padding: 0 10px 20px;
+    }
+    .mask .maskContent i {
+        display: block;
+        width: 52px;
+        height: 52px;
+        margin: 20px auto 10px;
+    }
+
+    .mask .maskContent .icon1 {
+        background-image: url("icon_22.png");
+    }
+
+    .mask .maskContent .icon2 {
+        background-image: url("icon_20.png");
+    }
+
+    .mask .maskContent .icon3 {
+        background-image: url("icon_21.png");
+    }
+
+    .mask .maskContent span {
+        font-size: 16px;
+        color: #34495e;
+        line-height:20px;
+    }
+</style>
+</head>
+<body>
+    <<h1>盛大盛大</h1><<h1>盛大盛大</h1><<h1>盛大盛大</h1><<h1>盛大盛大</h1><<h1>盛大盛大</h1><<h1>盛大盛大</h1><<h1>盛大盛大</h1><<h1>盛大盛大</h1><<h1>盛大盛大</h1><<h1>盛大盛大</h1>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function showMask(type,mes){
+            var timer = null;
+            var oDiv = $('<div class="mask"><div class="maskContent"><i></i><span></span></div></div>');
+            $("body").append(oDiv);
+            var documentHeight = $(document).height();
+            $(".mask").css("height",documentHeight);
+            if (type == 'warning') {
+                $('.maskContent i').addClass('icon1');
+            }
+            else if (type == 'success') {
+                $('.maskContent i').addClass('icon2');
+            }
+            else if (type == 'error') {
+                $('.maskContent i').addClass('icon3');
+            }
+            $('.maskContent span').text(mes);
+            oDiv.fadeIn();
+            timer = setTimeout(() => {
+                oDiv.remove();
+            }, 1200);
+        }
+        showMask('success',"sdd");
+    </script>
+</body>
+</html>
